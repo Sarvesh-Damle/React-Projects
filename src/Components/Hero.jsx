@@ -9,38 +9,45 @@ function Hero() {
   const [display, setDisplay] = useState(false)
 
   return (
-    <div className="App">
-      <h1>Build a Hero</h1>
-      <div>
-        <label>Name : </label>
-        <input type="text" style={{margin: 10}} onChange={e => setName(e.target.value)} />
-
-        <label>Age : </label>
-        <input type="number" style={{margin: 10}} onChange={e => setAge(e.target.value)} />
-
-        <label>Height : </label>
-        <input type="number" style={{margin: 10}} onChange={e => setHeight(e.target.value)} />
-
-        <label>SuperPower : </label>
-        <input type="text"style={{margin: 10}} onChange={e => setPower(e.target.value)} />
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center p-8 font-sans">
+      <h1 className="text-4xl font-bold text-gray-800 mb-8">Build a Hero</h1>
+      <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-md">
+        <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2">Name:</label>
+            <input type="text" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" onChange={e => setName(e.target.value)} />
+        </div>
+        <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2">Age:</label>
+            <input type="number" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" onChange={e => setAge(e.target.value)} />
+        </div>
+        <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2">Height:</label>
+            <input type="number" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" onChange={e => setHeight(e.target.value)} />
+        </div>
+        <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2">SuperPower:</label>
+            <input type="text" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" onChange={e => setPower(e.target.value)} />
+        </div>
+      
+        <button 
+            className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+            onClick={() => setDisplay((a) => !a)}
+        >
+            {display? "Hide Character" : "Display Character"}
+        </button>
       </div>
-      <button onClick={() => setDisplay((a) => !a)}>{display? "Hide Character" : "Display Character"}</button>
-      <h2>Hero Info</h2>
-      {display? (<ul>
-          <li>Name : {name}</li>
-          <li>Age : {age}</li>
-          <li>Height : {height}</li>
-          <li>SuperPower : {power}</li>
-        </ul>) : null}
-      {/* Alternate Method : */}
-      {/* {display && (
-        <ul>
-          <li>{name}</li>
-          <li>{age}</li>
-          <li>{height}</li>
-          <li>{power}</li>
-        </ul>
-      )}   */}
+
+      {display && (
+        <div className="mt-8 bg-white p-6 rounded-xl shadow-lg w-full max-w-md border-t-4 border-blue-500">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Hero Info</h2>
+            <ul className="space-y-2 text-gray-700">
+                <li><span className="font-semibold">Name:</span> {name}</li>
+                <li><span className="font-semibold">Age:</span> {age}</li>
+                <li><span className="font-semibold">Height:</span> {height}</li>
+                <li><span className="font-semibold">SuperPower:</span> {power}</li>
+            </ul>
+        </div>
+      )}
     </div>
   );
 }
