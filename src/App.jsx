@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Components/Home";
-import Todo from "./Components/Todo/Todo";
-import Quiz from "./Components/Quiz/Quiz";
-import SpaceNews from "./Components/Space News/SpaceNews";
-import VideoGame from "./Components/Video Game/VideoGame";
+import Home from "./pages/Home";
+import Todo from "./pages/Todo/Todo";
+import Quiz from "./pages/Quiz/Quiz";
+import SpaceNews from "./pages/Space News/SpaceNews";
+import VideoGame from "./pages/Video Game/VideoGame";
 
 function App() {
   return (
