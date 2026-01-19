@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
       open: true,
     },
     build: {
-      outDir: "build", // Keep 'build' to match CRA default, or change to 'dist' if preferred. CRA uses build.
+      outDir: "dist",
     },
   };
 });
