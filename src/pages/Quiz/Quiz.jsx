@@ -11,12 +11,14 @@ const Quiz = () => {
     const [username, setUsername] = useState("");
     const [score, setScore] = useState(0)
     return (
-        <div className='Main'>
-            <h1>Quiz App</h1>
+        <div className='min-h-screen bg-gray-50 flex flex-col items-center py-12 px-4 font-sans'>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-10 tracking-tight">Quiz App</h1>
             <GamestateContext.Provider value={{gamestate, setGamestate, username, setUsername, score, setScore}}>
-                {gamestate === "menu" ? <Menu /> : null}
-                {gamestate === "questions" ? <Questions /> : null}
-                {gamestate === "score" ? <Score /> : null}
+                <div className="w-full max-w-lg">
+                    {gamestate === "menu" ? <Menu /> : null}
+                    {gamestate === "questions" ? <Questions /> : null}
+                    {gamestate === "score" ? <Score /> : null}
+                </div>
             </GamestateContext.Provider>
         </div>
     );
