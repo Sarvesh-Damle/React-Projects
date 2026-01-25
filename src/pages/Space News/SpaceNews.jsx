@@ -1,5 +1,6 @@
 import React from "react";
 import useSWR from "swr";
+import BackButton from "../../components/BackButton";
 
 const SpaceNews = () => {
   const fetcher = (...args) => fetch(...args).then(response => response.json());
@@ -7,7 +8,8 @@ const SpaceNews = () => {
   const { data, isLoading } = useSWR('https://api.spaceflightnewsapi.net/v4/articles', fetcher)
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 font-sans">
+    <div className="min-h-screen bg-gray-50 py-12 px-4 font-sans relative">
+      <BackButton />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Space News</h1>
         <p className="mt-2 text-lg text-gray-600">Latest updates from the universe</p>
