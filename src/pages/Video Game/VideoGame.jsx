@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useSWR from "swr"
 import Swal from 'sweetalert2'
+import BackButton from "../../components/BackButton";
 
 const fetcher = (...args) => fetch(...args).then(response => response.json());
 
@@ -25,7 +26,8 @@ const VideoGame = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-12 px-4 font-sans">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-12 px-4 font-sans relative">
+      <BackButton />
       <div className="bg-slate-800 rounded-2xl shadow-xl w-full max-w-5xl p-8 mb-16 flex flex-col items-center">
         <h1 className="text-4xl text-white font-extrabold mb-8 text-center">Search for a Game</h1>
         
